@@ -11,9 +11,14 @@ export function User() {
         deleteUser(user.id);
         navigate("/users");
     };
+
+    if (!user) {
+        return <div>Username does not exist</div>
+    }
+
     return (
         <div>
-            <h2>{user.name}</h2>
+            <h4>{user.name}</h4>
             <div>
                 <strong>Phone: </strong> {user.phone}
             </div>
